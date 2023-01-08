@@ -8,7 +8,9 @@ import com.eatx.miniRest.model.CustomerInformation;
 
 public interface CustomerInformationController {
 
-	public String getCustomerInformationByCustomerRef(@RequestParam(value="customerRef", required=true) String customerRef);
+	public CustomerInformation getCustomerInformationByCustomerRef(@RequestParam(value="customerRef", required=true) String customerRef);
 	
-	public String postCustomerInformation(@RequestBody CustomerInformation customerInformation);
+	public CustomerInformation postCustomerInformation(@RequestBody CustomerInformation customerInformation);
+	
+	public String deleteCustomerInformation(@RequestParam(value="customerId", required=true) long customerId);
 }

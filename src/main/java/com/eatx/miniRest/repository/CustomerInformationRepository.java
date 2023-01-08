@@ -30,6 +30,6 @@ public interface CustomerInformationRepository extends CrudRepository<CustomerIn
      * @return 
      */
 
-	@Query(value = "SELECT last_value FROM customer_information_customer_id_seq", nativeQuery = true)
+	@Query(value = "SELECT nextval('customer_information_customer_id_seq')", nativeQuery = true)
     long nextCustomerId();
 }

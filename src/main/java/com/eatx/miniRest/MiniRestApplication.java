@@ -24,25 +24,10 @@ public class MiniRestApplication implements CommandLineRunner{
 	
 	public static void main(String[] args) throws IOException {
 		SpringApplication.run(MiniRestApplication.class, args);
-
-		
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
 		logger.debug("application startup");
-
-		File customerInformationCsvFile = new File(miniRestProperties.getCustomerInformationCsv());
-		if (!customerInformationCsvFile.exists()) {
-			throw new IOException("Customer Information CSV File does not exists");
-		}
-		
-		List<String> customerInformationCsv = new ArrayList<String>();
-		try {
-			customerInformationCsv = FileUtils.readLines(customerInformationCsvFile, StandardCharsets.UTF_8);
-			
-			
-		} catch (IOException e) {
-		}
 	}
 }

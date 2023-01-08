@@ -9,5 +9,4 @@ import lombok.Setter;
 @Component
 @ConfigurationProperties(prefix = "env")
 public class MiniRestProperties {
-	private @Getter @Setter String customerInformationCsv;
 }
