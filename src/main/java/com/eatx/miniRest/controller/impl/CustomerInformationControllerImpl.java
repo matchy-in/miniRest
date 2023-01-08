@@ -1,7 +1,6 @@
 package com.eatx.miniRest.controller.impl;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -49,7 +48,7 @@ public class CustomerInformationControllerImpl implements CustomerInformationCon
 		long customerId = customerInformationRepository.nextCustomerId();
 		customerInformation.setCustomerId(customerId);
 		
-		CustomerInformation returnCustomerInformation = customerInformationRepository.save(customerInformation);
+		customerInformationRepository.save(customerInformation);
 		return customerInformation;
 	}
 	

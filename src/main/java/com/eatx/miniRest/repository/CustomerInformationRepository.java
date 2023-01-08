@@ -23,7 +23,8 @@ public interface CustomerInformationRepository extends CrudRepository<CustomerIn
      * @param customerInformation
      * @return the id of saved record
      */
-    CustomerInformation save(CustomerInformation customerInformation);
+    @SuppressWarnings("unchecked")
+	CustomerInformation save(CustomerInformation customerInformation);
     
     /**
      * 
