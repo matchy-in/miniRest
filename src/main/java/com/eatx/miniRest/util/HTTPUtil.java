@@ -77,8 +77,7 @@ public class HTTPUtil {
 			poolingHttpClientConnectionManager.setMaxTotal(PoolingHttpClientConnectionPoolSize);
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error(e);
 		}
 	}
     
@@ -124,7 +123,7 @@ public class HTTPUtil {
 		HttpPost httpPost = new HttpPost(url);
 
 		Set<String> headerKeys = headers.keySet();
-		Iterator iterator = headerKeys.iterator();
+		Iterator<String> iterator = headerKeys.iterator();
 		while(iterator.hasNext()){
 			String key = iterator.next().toString();
 
@@ -139,6 +138,14 @@ public class HTTPUtil {
 		return response.getEntity();
     }
 	
+	/**
+	 * 
+	 * @param Url
+	 * @param headers
+	 * @param key value pair of a list
+	 * @return HttpEntity
+	 * @throws IOException
+	 */
 	public HttpEntity postHTTP(String Url, Hashtable<String,String> headers, List<? extends org.apache.http.NameValuePair> arguments) throws IOException{
     	
 		CloseableHttpClient httpclient = createHttpClient();
@@ -146,7 +153,7 @@ public class HTTPUtil {
 		HttpPost httpPost = new HttpPost(Url);
 
 		Set<String> headerKeys = headers.keySet();
-		Iterator iterator = headerKeys.iterator();
+		Iterator<String> iterator = headerKeys.iterator();
 		while(iterator.hasNext()){
 			String key = iterator.next().toString();
 
@@ -162,7 +169,7 @@ public class HTTPUtil {
     }
 	
     /**
-     * HTTP get action
+     * HTTP post action
      * @param url
      * @param headers
      * @return json response
@@ -181,7 +188,7 @@ public class HTTPUtil {
 
 		if (headers != null){
 			Set<String> headerKeys = headers.keySet();
-			Iterator iterator = headerKeys.iterator();
+			Iterator<String> iterator = headerKeys.iterator();
 			while(iterator.hasNext()){
 				String key = iterator.next().toString();
 	
@@ -275,7 +282,7 @@ public class HTTPUtil {
 
 		if (headers != null){
 			Set<String> headerKeys = headers.keySet();
-			Iterator iterator = headerKeys.iterator();
+			Iterator<String> iterator = headerKeys.iterator();
 			while(iterator.hasNext()){
 				String key = iterator.next().toString();
 	

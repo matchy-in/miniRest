@@ -1,5 +1,8 @@
 package com.eatx.miniRest.controller;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -10,6 +13,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.eatx.miniRest.model.CustomerInformation;
 
+
+/**
+ * integration test of CustomerInformationController
+ * @author match
+ * @since 1.0
+ */
 @SpringBootTest
 @TestInstance(Lifecycle.PER_CLASS)
 public class CustomerInformationControllerITest {
@@ -33,16 +42,20 @@ public class CustomerInformationControllerITest {
 		customerInformation.setPostCode("DT4 8NY");
 		
 		customerInformation = customerInformationController.postCustomerInformation(customerInformation);
+		
+		assertNotNull(customerInformation.getCustomerId());
 	}
 	
 	@Test
 	public void getCustomerInformationByCustomerRef(){
-		customerInformationController.getCustomerInformationByCustomerRef("CR8");
+		CustomerInformation customerInformation = customerInformationController.getCustomerInformationByCustomerRef("CR8");
+		
+		assertNotNull(customerInformation);
 	}
 	
-//	@AfterAll
+	@AfterAll
 	public void deleteTestRecord() {
-		customerInformationController.deleteCustomerInformation(customerInformation.getCustomerId());
+		assertEquals("{\"success\":true}",customerInformationController.deleteCustomerInformation(customerInformation.getCustomerId()));
 	}
 	
 }

@@ -23,23 +23,23 @@ public class CustomerInformationControllerImpl implements CustomerInformationCon
 	@Autowired
 	CustomerInformationRepository customerInformationRepository;
 
-	/**
-	 * get Customer Information by customerRef
-	 * @param customerRef
-	 * @return Customer Information by JSON format
-	 */
+	@Override
+	public CustomerInformationRepository getCustomerInformationRepository() {
+		return customerInformationRepository;
+	}
+
+	@Override
+	public void setCustomerInformationRepository(CustomerInformationRepository customerInformationRepository) {
+		this.customerInformationRepository = customerInformationRepository;
+	}
+
 	@Override
 	@GetMapping(value = "/customerInformation", produces = "application/json")
 	public CustomerInformation getCustomerInformationByCustomerRef(@RequestParam(value="customerRef", required=true) String customerRef) {
 		List<CustomerInformation> customerInformations = customerInformationRepository.findByCustomerRef(customerRef);
 		return customerInformations.isEmpty()?null:customerInformations.get(0);
 	}
-
-	/**
-	 * post Customer Information
-	 * @param customerRef
-	 * @return Customer Information id by JSON format
-	 */
+	
 	@Override
 	@PostMapping(value = "/customerInformation", consumes = "application/json", produces = "application/json")
 	public CustomerInformation postCustomerInformation(CustomerInformation customerInformation) {

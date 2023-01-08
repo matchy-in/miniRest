@@ -27,8 +27,8 @@ public interface CustomerInformationRepository extends CrudRepository<CustomerIn
 	CustomerInformation save(CustomerInformation customerInformation);
     
     /**
-     * 
-     * @return 
+     * retrieve next value of customer_information_customer_id_seq
+     * @return long value of customer_information_customer_id_seq
      */
 
 	@Query(value = "SELECT nextval('customer_information_customer_id_seq')", nativeQuery = true)

@@ -19,8 +19,12 @@ public class CustomerInformation {
 
 	// "customer_information_customer_id_seq" is postgresql sequence name.
     @Id
-//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_id")
-//    @SequenceGenerator(sequenceName = "customer_information_customer_id_seq", allocationSize = 1, name = "customer_id")
+    /*
+     * use generate id and insert record at the same action
+     * 
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_id")
+    @SequenceGenerator(sequenceName = "customer_information_customer_id_seq", allocationSize = 1, name = "customer_id")
+    */
     @Getter @Setter Long customerId;
 
     @Column(name = "customer_ref")
