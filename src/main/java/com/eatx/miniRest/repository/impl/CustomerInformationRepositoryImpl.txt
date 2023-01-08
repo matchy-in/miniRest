@@ -1,0 +1,103 @@
+package com.eatx.miniRest.repository.impl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.Query;
+
+import com.eatx.miniRest.model.CustomerInformation;
+import com.eatx.miniRest.repository.CustomerInformationRepository;
+
+public class CustomerInformationRepositoryImpl implements CustomerInformationRepository {
+
+	@Override
+	public <S extends CustomerInformation> S save(S entity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <S extends CustomerInformation> Iterable<S> saveAll(Iterable<S> entities) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Optional<CustomerInformation> findById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean existsById(Long id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Iterable<CustomerInformation> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Iterable<CustomerInformation> findAllById(Iterable<Long> ids) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public long count() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void deleteById(Long id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void delete(CustomerInformation entity) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void deleteAllById(Iterable<? extends Long> ids) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void deleteAll(Iterable<? extends CustomerInformation> entities) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void deleteAll() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List<CustomerInformation> findByCustomerRef(String customerRef) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public long saveCustomerInformation(CustomerInformation customerInformation) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public long nextCustomerId() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}
